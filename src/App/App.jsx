@@ -13,7 +13,11 @@ class App extends React.Component {
                     <div className="col-sm-8 col-sm-offset-2">
                         <Router>
                             <div>
-                                <PrivateRoute exact path="/" component={HomePage} />
+                                {/* <PrivateRoute exact path="/" component={HomePage} /> */}
+                                <Route path='/' component={() => { 
+                                    window.location.href = 'http://192.168.15.57:8080'; 
+                                    return null;
+                                }}/>
                                 <Route path="/login" component={LoginPage} />
                             </div>
                         </Router>
